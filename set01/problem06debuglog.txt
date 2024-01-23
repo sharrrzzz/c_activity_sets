@@ -1,0 +1,56 @@
+PS C:\FPC\c_activity_sets\set01>  gcc problem06.c -O0 -g
+PS C:\FPC\c_activity_sets\set01>  gdb a.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\FPC\c_activity_sets\set01\a.exe...done.
+(gdb) l
+1       #include <stdio.h>
+2
+3       int input(int *a, int *b, int *c);
+4       void compare(int a, int b, int c, int *largest);
+5       void output(int a, int b, int c, int largest);
+6
+7       int main()
+8       {
+9           int a, b, c, largest;
+10          input(&a, &b, &c);
+(gdb) b 3
+Breakpoint 1 at 0x40146f: file problem06.c, line 3.
+(gdb) r
+Starting program: C:\FPC\c_activity_sets\set01/a.exe 
+[New Thread 2300.0x292c]
+[New Thread 2300.0x367c]
+
+Breakpoint 1, main () at problem06.c:10
+10          input(&a, &b, &c);
+(gdb) n
+Enter the first number: 1
+Enter the second number: 2
+Enter the third number: 3
+11          compare(a, b, c, &largest);
+(gdb) n
+12          output(a, b, c, largest);
+(gdb) n
+The largest among 1, 2 and 3 is 313         return 0;
+(gdb) n
+14      }
+(gdb) n
+0x00401288 in __register_frame_info ()
+(gdb) n
+Single stepping until exit from function __register_frame_info,
+which has no line number information.
+0x0040128a in __register_frame_info ()
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 2300] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5

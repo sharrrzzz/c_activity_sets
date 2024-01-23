@@ -1,0 +1,27 @@
+PS C:\FPC\c_activity_sets\set01>  gcc problem02.c -O0 -g
+PS C:\FPC\c_activity_sets\set01>  gdb a.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\FPC\c_activity_sets\set01\a.exe...done.
+(gdb) l
+1       // 2. Write a C program to add two numbers.
+2       #include <stdio.h>
+3       int main()
+4       {
+5           int a = 4, b = 5;
+6           printf("The sum of a and b is: %d", a + b);
+7           return 0;
+8       }
+(gdb) r
+Starting program: C:\FPC\c_activity_sets\set01/a.exe 
+[New Thread 12100.0xbb0]
+[New Thread 12100.0x2190]
+The sum of a and b is: 9[Inferior 1 (process 12100) exited normally]
+(gdb) q
