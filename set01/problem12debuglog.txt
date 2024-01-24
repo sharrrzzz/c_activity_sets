@@ -1,0 +1,52 @@
+PS C:\FPC\c_activity_sets\set01> gcc problem12.c -O0 -g
+PS C:\FPC\c_activity_sets\set01> gdb a.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\FPC\c_activity_sets\set01\a.exe...done.
+(gdb) b 10
+Breakpoint 1 at 0x401477: file problem12.c, line 10.
+(gdb) r
+Starting program: C:\FPC\c_activity_sets\set01/a.exe 
+[New Thread 14620.0x28c4]
+[New Thread 14620.0x3324]
+
+Breakpoint 1, 0x00401477 in main () at problem12.c:18
+18      {
+(gdb) step
+19          int n=get_n();
+(gdb) n
+enter the number of arrays: 3
+20          Complex complex_numbers[n];
+(gdb) n
+21          input_n_complex(n,complex_numbers);
+(gdb) n
+Complex number 1: 
+enter the real part: 1
+enter the imaginary part: 2
+Complex number 2: 
+enter the real part: 1
+enter the imaginary part: 2
+Complex number 3: 
+enter the real part: 1
+enter the imaginary part: 2
+23          result=add_n_complex(n,complex_numbers);
+(gdb) n
+24          output(n,complex_numbers,result);
+(gdb) n
+the sum of the complex numbers is 3.000000 + 6.000000i25            return 0;
+(gdb) n
+26      }
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 14620] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5

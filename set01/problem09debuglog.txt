@@ -1,0 +1,62 @@
+PS C:\FPC\c_activity_sets\set01> gcc problem09.c
+PS C:\FPC\c_activity_sets\set01> gdb a.exe      
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\FPC\c_activity_sets\set01\a.exe...done.
+(gdb) q
+PS C:\FPC\c_activity_sets\set01> ./a.exe
+Enter a number: 49
+The square root of 49.00 is 7.0000
+PS C:\FPC\c_activity_sets\set01> gcc problem09.c -O0 -g
+PS C:\FPC\c_activity_sets\set01> gdb a.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\FPC\c_activity_sets\set01\a.exe...done.
+(gdb) b 5
+Breakpoint 1 at 0x40146e: file problem09.c, line 5.
+(gdb) r
+Starting program: C:\FPC\c_activity_sets\set01/a.exe 
+[New Thread 9808.0x3360]
+[New Thread 9808.0xa50]
+
+Breakpoint 1, main () at problem09.c:12
+12          n=input();
+(gdb) step
+input () at problem09.c:21
+21          printf("Enter a number: ");
+(gdb) n
+Enter a number: 22          scanf("%f",&n);
+(gdb) n
+49
+23          return n;
+(gdb) n
+24      }
+(gdb) n
+main () at problem09.c:13
+13          sqrroot=square_root(n);
+(gdb) n
+14          output(n,sqrroot);
+(gdb) n
+The square root of 49.00 is 7.000015        return 0;
+(gdb) n
+16      }
+(gdb) n
+0x00401288 in __register_frame_info ()
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 9808] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
