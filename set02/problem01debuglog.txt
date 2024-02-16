@@ -1,0 +1,59 @@
+PS C:\FPC\c_activity_sets\set02> gcc problem01.c -O0 -g
+PS C:\FPC\c_activity_sets\set02> gdb a.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\FPC\c_activity_sets\set02\a.exe...done.
+(gdb) l
+1       #include <stdio.h>
+2
+3       void input(float *base, float *height);
+4       void find_area(float base, float height, float *area);
+5       void output(float base, float height, float area);
+6
+7       int main()
+8       {
+9           float base, height, area;
+10          input(&base, &height);
+(gdb) b main
+Breakpoint 1 at 0x40146e: file problem01.c, line 10.
+(gdb) r
+Starting program: C:\FPC\c_activity_sets\set02/a.exe 
+[New Thread 14132.0x4fc]
+[New Thread 14132.0x2bbc]
+
+Breakpoint 1, main () at problem01.c:10
+10          input(&base, &height);
+(gdb) step
+input (base=0x61ff1c, height=0x61ff18) at problem01.c:18
+18          printf("Enter the base of the triangle: ");
+(gdb) n
+Enter the base of the triangle: 19          scanf("%f", base);
+(gdb) n
+1
+20          printf("Enter the height of the triangle: ");
+(gdb) n
+Enter the height of the triangle: 21        scanf("%f", height);
+(gdb) n
+2
+22      }
+(gdb) n
+main () at problem01.c:11
+11          find_area(base, height, &area);
+(gdb) n
+12          output(base, height, area);
+(gdb) n
+The area of the triange with base 1.000000 and height 2.000000 is 1.00000013        return 0;
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 14132] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
