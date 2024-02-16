@@ -1,0 +1,111 @@
+PS C:\FPC\c_activity_sets\set02> gcc problem08.c -O0 -g
+PS C:\FPC\c_activity_sets\set02> gdb a.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\FPC\c_activity_sets\set02\a.exe...done.
+(gdb) l
+7       int input_n();
+8       Triangle input_triangle();
+9       void input_n_triangles(int n, Triangle t[n]);
+10      void find_area(Triangle *t);
+11      void find_n_areas(int n, Triangle t[n]);
+12      Triangle find_smallest_triangle(int n, Triangle t[n]);
+13      void output(int n, Triangle t[n], Triangle smallest);
+14
+15      int main()
+16      {
+(gdb) b main
+Breakpoint 1 at 0x401479: file problem08.c, line 16.
+(gdb) r
+Starting program: C:\FPC\c_activity_sets\set02/a.exe 
+[New Thread 7484.0x2ed8]
+[New Thread 7484.0x374c]
+
+Breakpoint 1, 0x00401479 in main () at problem08.c:16
+16      {
+(gdb) n
+18          n = input_n();
+(gdb) n
+Enter the number of triangles: 3
+19          Triangle t[n];
+(gdb) n
+20          input_n_triangles(n,t);
+(gdb) n
+Enter base and height of triangle 1
+Enter the base of the triangle:
+3
+Enter the height of the triangle: 
+2
+Enter base and height of triangle 2
+Enter the base of the triangle:
+4
+Enter the height of the triangle: 
+5
+Enter base and height of triangle 3
+Enter the base of the triangle:
+2
+Enter the height of the triangle: 
+4
+21          find_n_areas(n,t);
+(gdb) step
+find_n_areas (n=3, t=0x61fea4) at problem08.c:61
+61          for (int i = 0; i < n; i++)
+(gdb) n
+63              find_area(&t[i]);
+(gdb) n
+61          for (int i = 0; i < n; i++)
+(gdb) n
+63              find_area(&t[i]);
+(gdb) n
+61          for (int i = 0; i < n; i++)
+(gdb) n
+63              find_area(&t[i]);
+(gdb) n
+61          for (int i = 0; i < n; i++)
+(gdb) n
+65      }
+(gdb) n
+main () at problem08.c:22
+22          Triangle smallest = find_smallest_triangle(n,t);
+(gdb) step
+find_smallest_triangle (n=3, t=0x61fea4) at problem08.c:69
+69          Triangle smallest = t[0];
+(gdb) n
+70          for (int i = 1; i < n; i++)
+(gdb) n
+72              if (t[i].area < smallest.area)
+(gdb) n
+70          for (int i = 1; i < n; i++)
+(gdb) n
+72              if (t[i].area < smallest.area)
+(gdb) n
+70          for (int i = 1; i < n; i++)
+(gdb) n
+77          return smallest;
+(gdb) n
+78      }
+(gdb) n
+main () at problem08.c:23
+23          output(n,t,smallest);
+(gdb) n
+Information about triangle entered: 
+Triangle 1, base = 3.0, height = 2.0, area = 3.0
+Triangle 2, base = 3.0, height = 2.0, area = 3.0
+Triangle 3, base = 3.0, height = 2.0, area = 3.0
+The smallest area among the given triangles is 3.0024       return 0;
+(gdb) n
+25      }
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 7484] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
