@@ -1,0 +1,58 @@
+PS C:\FPC\c_activity_sets\set03> gcc problem02.c -O0 -g
+PS C:\FPC\c_activity_sets\set03> gdb a.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\FPC\c_activity_sets\set03\a.exe...done.
+(gdb) l
+2
+3       void input_triangle(float *x1, float *y1, float *x2, float *y2, float *x3, float *y3);
+4       int is_triangle(float x1, float y1, float x2, float y2,float x3, float y3);
+5       void output(float x1, float y1, float x2, float y2,float x3, float y3, int result);
+6
+7       int main()
+8       {
+9           float x1, x2, y1, y2, x3, y3;
+10          int result;
+11          input_triangle(&x1, &y1, &x2, &y2, &x3, &y3);
+(gdb) b main
+Breakpoint 1 at 0x40146e: file problem02.c, line 11.
+(gdb) r
+Starting program: C:\FPC\c_activity_sets\set03/a.exe 
+[New Thread 6276.0x15c4]
+[New Thread 6276.0x1528]
+
+Breakpoint 1, main () at problem02.c:11
+11          input_triangle(&x1, &y1, &x2, &y2, &x3, &y3);
+(gdb) n
+Enter the coordinates of the first point (x,y): 1 0
+Enter the coordinates of the second point (x,y): 0 0
+Enter the coordinates of the third point (x,y): 2 0
+12          result = is_triangle(x1, y1, x2, y2, x3, y3);
+(gdb) step
+is_triangle (x1=1, y1=0, x2=0, y2=0, x3=2, y3=0) at problem02.c:29
+29          if ((x1 * (y2-y3) + x2 * (y3 - y1) + x3 * (y2-y1)) != 0)
+(gdb) n
+35              return 0;
+(gdb) n
+37      }
+(gdb) n
+main () at problem02.c:13
+13          output(x1, y1, x2, y2, x3, y3, result);
+(gdb) n
+The given points (1.00, 0.00), (0.00, 0.00) and (2.00, 0.00) do not form a triangle14       return 0;
+(gdb) n
+15      }
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 6276] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5

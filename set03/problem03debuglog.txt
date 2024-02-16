@@ -1,0 +1,64 @@
+PS C:\FPC\c_activity_sets\set03> gcc problem03.c -O0 -g
+PS C:\FPC\c_activity_sets\set03> gdb a.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\FPC\c_activity_sets\set03\a.exe...done.
+(gdb) l
+1       #include <stdio.h>
+2
+3       int input_number();
+4       int is_prime(int n);
+5       void output(int n, int result);
+6
+7       int main()
+8       {
+9           int n,result;
+10          n = input_number();
+(gdb) b main
+Breakpoint 1 at 0x40146e: file problem03.c, line 10.
+(gdb) r
+Starting program: C:\FPC\c_activity_sets\set03/a.exe 
+[New Thread 14676.0x345c]
+[New Thread 14676.0x2854]
+
+Breakpoint 1, main () at problem03.c:10
+10          n = input_number();
+(gdb) n
+Enter a number: 4
+11          result = is_prime(n);
+(gdb) step
+is_prime (n=4) at problem03.c:26
+26          int result = 1;
+(gdb) n
+27          for (int i=2;i<=n/2;i++)
+(gdb) n
+29              if (n % i == 0)
+(gdb) n
+31                  result = 0;
+(gdb) n
+32                  break;
+(gdb) n
+35          return result;
+(gdb) n
+36      }
+(gdb) n
+main () at problem03.c:12
+12          output(n,result);
+(gdb) n
+4 is not a prime number13           return 0;
+(gdb) n
+14      }
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 14676] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
