@@ -35,17 +35,16 @@ void input_array(int n, int a[n])
 
 int sum_composite_numbers(int n, int a[n])
 {
-    int is_composite = 0;
-    if (a[is_composite] == 0 || a[is_composite] == 1)
-    {
-        return 0;
-    }
     int sum = 0;
-    for (int j = 1; j < n; j++)
+    for (int i = 0; i<n; i++)
     {
-        if (is_composite)
+        for (int j = 2; j < a[i]; j++)
         {
-            sum=sum+a[is_composite];
+            if (a[i] % j == 0)
+            {
+                sum=sum+a[i];
+                break;
+            }
         }
     }
     return sum;
@@ -53,5 +52,5 @@ int sum_composite_numbers(int n, int a[n])
 
 void output(int sum)
 {
-    printf("Sum of composite numbers in the array is: %d\n", sum);
+    printf("Sum of composite numbers in the array is: %d \n", sum);
 }
