@@ -1,0 +1,92 @@
+PS C:\FPC\c_activity_sets\set03> gcc problem04.c -O0 -g
+PS C:\FPC\c_activity_sets\set03> gdb a.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\FPC\c_activity_sets\set03\a.exe...done.
+(gdb) l
+1       #include <stdio.h>
+2
+3       int input();
+4       int find_fibo(int n);
+5       void output(int n, int fibo);
+6
+7       int main()
+8       {
+9           int n,fibo;
+10          n = input();
+(gdb) b main
+Breakpoint 1 at 0x40146e: file problem04.c, line 10.
+(gdb) r
+Starting program: C:\FPC\c_activity_sets\set03/a.exe 
+[New Thread 15940.0x11cc]
+[New Thread 15940.0x28a8]
+
+Breakpoint 1, main () at problem04.c:10
+10          n = input();
+(gdb) n
+Enter a number: 5
+11          fibo = find_fibo(n);
+(gdb) step
+find_fibo (n=5) at problem04.c:26
+26          if (n<=1)
+(gdb) n
+30          int a = 0, b = 1, fibo;
+(gdb) n
+31          for (int i = 2; i <= n; i++)
+(gdb) n
+33              fibo = a + b;
+(gdb) n
+34              a = b;
+(gdb) n
+35              b = fibo;
+(gdb) n
+31          for (int i = 2; i <= n; i++)
+(gdb) n
+33              fibo = a + b;
+(gdb) n
+34              a = b;
+(gdb) n
+35              b = fibo;
+(gdb) n
+31          for (int i = 2; i <= n; i++)
+(gdb) n
+33              fibo = a + b;
+(gdb) n
+34              a = b;
+(gdb) nn
+Undefined command: "nn".  Try "help".
+(gdb) n
+35              b = fibo;
+(gdb) n
+31          for (int i = 2; i <= n; i++)
+(gdb) n
+33              fibo = a + b;
+(gdb) n
+34              a = b;
+(gdb) n
+35              b = fibo;
+(gdb) n
+31          for (int i = 2; i <= n; i++)
+(gdb) n
+37          return fibo;
+(gdb) n
+38      }
+(gdb) n
+main () at problem04.c:12
+12          output(n,fibo);
+(gdb) n
+The 5th number of the fibonnaci series is 513       return 0;
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 15940] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
