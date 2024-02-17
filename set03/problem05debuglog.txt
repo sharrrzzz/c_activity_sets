@@ -1,0 +1,56 @@
+PS C:\FPC\c_activity_sets\set03> gcc problem05.c -O0 -g
+PS C:\FPC\c_activity_sets\set03> gdb a.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.        
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".      
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>... 
+Reading symbols from C:\FPC\c_activity_sets\set03\a.exe...done.
+(gdb) l
+1       #include <stdio.h>
+2
+3       int input_array_size();
+4       void init_array(int n, int a[n]);
+5       void erotosthenes_sieve(int n, int a[n]);
+6       void output(int n, int a[n]);
+7
+8       int main()
+9       {
+10          int n;
+(gdb) b main
+Breakpoint 1 at 0x401477: file problem05.c, line 9.
+(gdb) r
+Starting program: C:\FPC\c_activity_sets\set03/a.exe 
+[New Thread 14668.0x2ad4]
+[New Thread 14668.0xed8]
+
+Breakpoint 1, 0x00401477 in main () at problem05.c:9
+9       {
+(gdb) n
+11          n = input_array_size();
+(gdb) n
+Enter the size of an array: 90
+12          int a[n];
+(gdb) n
+13          init_array(n,a);
+(gdb) n
+14          erotosthenes_sieve(n,a);
+(gdb) n
+15          output(n,a);
+(gdb) n
+Prime numbers between 2 and 90 are: 
+2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89,
+16          return 0;
+(gdb) n
+17      }
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 14668] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
