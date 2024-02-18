@@ -1,0 +1,78 @@
+PS C:\FPC\c_activity_sets\set04> gcc problem06.c -O0 -g
+PS C:\FPC\c_activity_sets\set04> gdb a.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:   
+<http://www.gnu.org/software/gdb/bugs/>...    
+Reading symbols from C:\FPC\c_activity_sets\set04\a.exe...done.
+(gdb) l
+2       #include <string.h>
+3
+4       void input_string(char *a);
+5       int count_words(char *string);
+6       void output(char *string, int no_words);
+7
+8       int main()
+9       {
+10          char string[100];
+11          input_string(string);
+(gdb) b 4   
+Breakpoint 1 at 0x40146e: file problem06.c, line 4.
+(gdb) n
+The program is not being run.
+(gdb) r
+Starting program: C:\FPC\c_activity_sets\set04/a.exe 
+[New Thread 10704.0x1e48]
+[New Thread 10704.0x2f7c]
+
+Breakpoint 1, main () at problem06.c:11
+11          input_string(string);
+(gdb) step
+input_string (a=0x61feb8 "\034Cßvü_a") at problem06.c:19
+19          printf("Enter a string: ");
+(gdb) n
+Enter a string: 20          scanf("%s",a);
+(gdb) n
+hello world hello
+21      }
+(gdb) n
+main () at problem06.c:12
+12          int no_words = count_words(string);
+(gdb) step
+count_words (string=0x61feb8 "hello") at problem06.c:25
+25          int count = 0;
+(gdb) n
+26          char* tok = strtok(string, " ");
+(gdb) n
+27          while (tok != NULL)
+(gdb) n
+29              count++;
+(gdb) n
+30              tok = strtok(NULL, " ");
+(gdb) n
+27          while (tok != NULL)
+(gdb) n
+32          return count;
+(gdb) n
+33      }
+(gdb) n
+main () at problem06.c:13
+13          output(string,no_words);
+(gdb) n
+The number of words is 114          return 0;
+(gdb) n
+15      }
+(gdb) n
+0x00401288 in __register_frame_info ()
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 10704] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5

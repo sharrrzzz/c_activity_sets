@@ -17,7 +17,7 @@ int main()
 void input_string(char *a)
 {
     printf("Enter a string: ");
-    scanf("%s",a);
+    scanf("%[^\n]%*c",a);
 }
 
 int count_words(char *string)
