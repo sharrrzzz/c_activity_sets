@@ -6,38 +6,35 @@ void output(int a, int b, int gcd);
 
 int main()
 {
-    int a,b,gcd;
+    int a, b, gcd;
     a = input();
     b = input();
-    gcd = find_gcd(a,b);
-    output(a,b,gcd);
+    gcd = find_gcd(a, b);
+    output(a, b, gcd);
     return 0;
 }
 
 int input()
 {
     int n;
-    printf("Enter a number: ");
-    scanf("%d",&n);
+    printf("Enter the numbers: ");
+    scanf("%d", &n);
     return n;
 }
 
 int find_gcd(int a, int b)
 {
-    while (a!=b)
+    int gcd;
+    while (b != 0)
     {
-        if (a>b)
-        {
-            a=a-b;
-        }
-        if (b>a)
-        {
-            b=b-a;
-        }
+        gcd = b;
+        b = a % b;
+        a = gcd;
     }
+    return gcd;
 }
 
 void output(int a, int b, int gcd)
 {
-    printf("The GCD of %d and %d is %d",a,b,gcd);
+    printf("The GCD of %d and %d is %d", a, b, gcd);
 }
