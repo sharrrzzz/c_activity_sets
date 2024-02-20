@@ -23,13 +23,16 @@ int input_number()
 
 int is_composite(int n)
 {
-    if (n == 0 || n == 1)
-    {
-        return 0;
-    }
     for (int i = 2; i <= n/2; i++)
     {
-        return 1;
+        if (n % i == 0)
+        {
+            return 1;
+        }
+        else 
+        {
+            return 0;
+        }
     }
     return 0;
 }
