@@ -1,0 +1,107 @@
+PS C:\FPC\c_activity_sets\set05> gcc problem06.c -O0 -g
+PS C:\FPC\c_activity_sets\set05> gdb a.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\FPC\c_activity_sets\set05\a.exe...done.
+(gdb) l
+1       #include <stdio.h>
+2
+3       int input_n();
+4       void input(int n, int a[n]);
+5       float odd_average(int n, int a[n]);
+6       void output(float avg);
+7
+8       int main()
+9       {
+10          int n;
+(gdb) b main
+Breakpoint 1 at 0x401477: file problem06.c, line 9.
+(gdb) r
+Starting program: C:\FPC\c_activity_sets\set05/a.exe 
+[New Thread 1908.0x32cc]
+[New Thread 1908.0x15cc]
+
+Breakpoint 1, 0x00401477 in main () at problem06.c:9
+9       {
+(gdb) n
+11          n = input_n();
+(gdb) n
+Enter the size of the array: 5
+12          int a[n];
+(gdb) n
+13          input(n,a);
+(gdb) n
+Enter the elements of the array: 
+Element 1:
+5
+Element 2: 
+4
+Element 3: 
+3
+Element 4: 
+8
+Element 5: 
+0
+15          avg = odd_average(n,a);
+(gdb) step
+odd_average (n=5, a=0x61fec8) at problem06.c:40
+40          int sum = 0;
+(gdb) n
+41          int odd_nos = 0;
+(gdb) n
+42          for (int i = 0; i < n; i++)
+(gdb) n
+44              if (a[i] % 2 != 0)
+(gdb) n
+46                  sum = sum + a[i];
+(gdb) n
+47                  odd_nos++;
+(gdb) n
+42          for (int i = 0; i < n; i++)
+(gdb) n
+44              if (a[i] % 2 != 0)
+(gdb) n
+42          for (int i = 0; i < n; i++)
+(gdb) n
+44              if (a[i] % 2 != 0)
+(gdb) n
+46                  sum = sum + a[i];
+(gdb) n
+47                  odd_nos++;
+(gdb) n
+42          for (int i = 0; i < n; i++)
+(gdb) n
+44              if (a[i] % 2 != 0)
+(gdb) n
+42          for (int i = 0; i < n; i++)
+(gdb) n
+44              if (a[i] % 2 != 0)
+(gdb) n
+42          for (int i = 0; i < n; i++)
+(gdb) n
+51          if (odd_nos == 0)
+(gdb) n
+56          float avg = sum / odd_nos;
+(gdb) n
+57          return avg;
+(gdb) n
+58      }
+(gdb) n
+main () at problem06.c:16
+16          output(avg);
+(gdb) n
+The average of all odd numbers is: 4.0017           return 0;
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 1908] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
