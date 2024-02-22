@@ -1,0 +1,58 @@
+PS C:\FPC\c_activity_sets\set05> gcc problem03.c -O0 -g
+PS C:\FPC\c_activity_sets\set05> gdb a.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\FPC\c_activity_sets\set05\a.exe...done.
+(gdb) l
+11      Camel input();
+12      void find_weight(Camel *c); // passing address variable
+13      void output(Camel c);
+14
+15      //`weight = pi * stomach_radius^3 * sqrt(height * length)`
+16
+17      int main()
+18      {
+19          Camel c;
+20          c = input();
+(gdb) b main
+Breakpoint 1 at 0x40146e: file problem03.c, line 20.
+(gdb) r
+Starting program: C:\FPC\c_activity_sets\set05/a.exe 
+[New Thread 11388.0xc98]
+[New Thread 11388.0xdc8]
+
+Breakpoint 1, main () at problem03.c:20
+20          c = input();
+(gdb) n
+Enter the stomach radius of the camel: 1
+Enter the height of the camel: 1
+Enter the length of the camel: 1
+21          find_weight(&c);
+(gdb) step
+find_weight (c=0x61ff10) at problem03.c:40
+40          float pi = 3.1415;
+(gdb) n
+41          c->weight = pi * c->radius * c->radius * c->radius * sqrt(c->height * c->length);
+(gdb) n
+42      }
+(gdb) n
+main () at problem03.c:22
+22          output(c);
+(gdb) n
+The weight of a camel with stomach radius 1.00, height 1.00 and length 1.00 is 3.141523     return 0;
+(gdb) n
+24      }
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 11388] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
