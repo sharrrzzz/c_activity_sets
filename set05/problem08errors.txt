@@ -1,0 +1,101 @@
+PS C:\FPC\c_activity_sets\set05> gcc problem08 -O0 -g
+gcc.exe: error: problem08: No such file or directory
+gcc.exe: fatal error: no input files
+compilation terminated.
+PS C:\FPC\c_activity_sets\set05> gcc problem08.c -O0 -g
+PS C:\FPC\c_activity_sets\set05> gdb a.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\FPC\c_activity_sets\set05\a.exe...done.
+(gdb) l
+5           float radius, height, length, weight;
+6       } Camel;
+7
+8       void input(int n, Camel c[n], float *truck_weight);
+9       void find_camel_weight(int n, Camel c[n]);
+10      float compute_total_weight(int n, Camel c[n], float truck_weight);
+11      void output(float total_weight);
+12
+13      int main()
+14      {
+(gdb) b main
+Breakpoint 1 at 0x401477: file problem08.c, line 14.
+(gdb) r
+Starting program: C:\FPC\c_activity_sets\set05/a.exe 
+[New Thread 7156.0xb84]
+[New Thread 7156.0x1978]
+
+Breakpoint 1, 0x00401477 in main () at problem08.c:14
+14      {
+(gdb) n
+16          printf("Enter the number of camels: ");
+(gdb) n
+Enter the number of camels: 17      scanf("%d", &n);
+(gdb) n
+3
+18          Camel camel[n];
+(gdb) n
+20          input(n, camel, &truck_weight);
+(gdb) n
+Enter details of camel 1
+Height: 1
+Radius: 1
+Length: 1
+Enter details of camel 2
+Height: 1
+Radius: 1
+Length: 1
+Enter details of camel 3
+Height: 1
+Radius: 1
+Length: 1
+Enter the weight of the truck: 2000
+21          find_camel_weight(n, camel);
+(gdb) n
+22          float total_weight = compute_total_weight(n, camel, truck_weight);
+(gdb) step
+compute_total_weight (n=3, c=0x61fe9c, truck_weight=2000) at problem08.c:54
+54          float total_weight = truck_weight;
+(gdb) n
+55          for (int i = 0; i < n; i++)
+(gdb) n
+57              total_weight += c[i].weight;
+(gdb) n
+55          for (int i = 0; i < n; i++)
+(gdb) n
+57              total_weight += c[i].weight;
+(gdb) n
+55          for (int i = 0; i < n; i++)
+(gdb) n
+57              total_weight += c[i].weight;
+(gdb) n
+55          for (int i = 0; i < n; i++)
+(gdb) n
+59          return total_weight;
+(gdb) n
+60      }
+(gdb) n
+main () at problem08.c:23
+23          output(total_weight);
+(gdb) nn
+Undefined command: "nn".  Try "help".
+(gdb) n
+The total weight of truck is: 2009.42004424         return 0;
+(gdb)
+25      }
+(gdb) n
+0x00401288 in __register_frame_info ()
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 7156] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
