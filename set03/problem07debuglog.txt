@@ -1,0 +1,59 @@
+PS C:\FPC\c_activity_sets\set03> gcc problem07.c -O0 -g
+PS C:\FPC\c_activity_sets\set03> gdb a.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\FPC\c_activity_sets\set03\a.exe...done.
+(gdb) l 
+14      } Line;
+15
+16      Point input_point();
+17      Line input_line();
+18      void find_length(Line *l);
+19      void output(Line l);
+20
+21      int main()
+22      {
+23          Line l = input_line();
+(gdb) b main
+Breakpoint 1 at 0x40146e: file problem07.c, line 23.
+(gdb) r
+Starting program: C:\FPC\c_activity_sets\set03/a.exe 
+[New Thread 12272.0x2650]
+[New Thread 12272.0x2e30]
+
+Breakpoint 1, main () at problem07.c:23
+23          Line l = input_line();
+(gdb) n
+1 1
+2 2
+24          find_length(&l);
+(gdb) step
+find_length (l=0x61ff0c) at problem07.c:46
+46          float dx = l->p2.x - l->p1.x;
+(gdb) n
+47          float dy = l->p2.y - l->p1.y;
+(gdb) n
+48          float distance = sqrt((dx * dx) + (dy * dy));
+(gdb) n
+49          l->distance = distance;
+(gdb) n
+50      }
+(gdb) n
+main () at problem07.c:25
+25          output(l);
+(gdb) n
+the length of the line is 1.4126            return 0;
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 12272] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5

@@ -10,9 +10,9 @@ int main()
     int n;
     n = input_array_size();
     int a[n];
-    init_array(n,a);
-    erotosthenes_sieve(n,a);
-    output(n,a);
+    init_array(n, a);
+    erotosthenes_sieve(n, a);
+    output(n, a);
     return 0;
 }
 
@@ -20,13 +20,13 @@ int input_array_size()
 {
     int n;
     printf("Enter the size of an array: ");
-    scanf("%d",&n);
+    scanf("%d", &n);
     return n;
 }
 
 void init_array(int n, int a[n])
 {
-    for (int i = 0; i<n; i++)
+    for (int i = 0; i < n; i++)
     {
         a[i] = i + 1;
     }
@@ -34,30 +34,17 @@ void init_array(int n, int a[n])
 
 void erotosthenes_sieve(int n, int a[n])
 {
-    for (int i = 2; i <= n; i++)
-    {
-        a[i] = 1;
-    }
-    for (int p = 2; p * p <= n; p++)
-    {
-        if (a[p] == 1)
-        {
-            for (int i = p*p; i <= n; i+=p)
-            {
-                a[i] = 0;
-            }
-        }    
-    }
+    
 }
 
 void output(int n, int a[n])
 {
-    printf("Prime numbers between 2 and %d are: \n",n);
-    for (int i = 2; i<n; i++)
+    printf("Prime numbers between 2 and %d are: \n", n);
+    for (int i = 2; i < n; i++)
     {
         if (a[i] == 1)
         {
-            printf("%d, ",i);
+            printf("%d, ", i);
         }
     }
     printf("\n");
