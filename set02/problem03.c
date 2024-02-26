@@ -17,13 +17,14 @@ int input_number()
 {
     int n;
     printf("Enter a number: ");
-    scanf("%d", &n);
+    scanf("%d",&n);
     return n;
 }
 
 int is_composite(int n)
 {
-    for (int i = 2; i <= n/2; i++)
+    int result = 0;
+    for (int i = 2; i<n; i++)
     {
         if (n % i == 0)
         {
@@ -34,17 +35,17 @@ int is_composite(int n)
             return 0;
         }
     }
-    return 0;
+    return result;
 }
 
 void output(int n, int result)
 {
     if (result == 1)
     {
-        printf("%d is a composite number", n);
+        printf("%d is a composite number.",n);
     }
     else
     {
-        printf("%d is not a composite number", n);
+        printf("%d is not a composite number.",n);
     }
 }
