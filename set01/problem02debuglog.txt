@@ -1,5 +1,5 @@
-PS C:\FPC\c_activity_sets\set01>  gcc problem02.c -O0 -g
-PS C:\FPC\c_activity_sets\set01>  gdb a.exe
+PS C:\FPC\c_activity_sets\set01> gcc problem02.c -O0 -g
+PS C:\FPC\c_activity_sets\set01> gdb a.exe
 GNU gdb (GDB) 7.6.1
 Copyright (C) 2013 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
@@ -15,13 +15,17 @@ Reading symbols from C:\FPC\c_activity_sets\set01\a.exe...done.
 2       #include <stdio.h>
 3       int main()
 4       {
-5           int a = 4, b = 5;
-6           printf("The sum of a and b is: %d", a + b);
-7           return 0;
-8       }
-(gdb) r
+5           int a,b;
+6           printf("Enter the first number: ");
+7           scanf("%d",&a);
+8           printf("Enter the second number: ");
+9           scanf("%d",&b);
+10          int sum = a+b;
+(gdb) r 
 Starting program: C:\FPC\c_activity_sets\set01/a.exe 
-[New Thread 12100.0xbb0]
-[New Thread 12100.0x2190]
-The sum of a and b is: 9[Inferior 1 (process 12100) exited normally]
+[New Thread 9384.0x16ac]
+[New Thread 9384.0x2f74]
+Enter the first number: 4
+Enter the second number: 3
+The sum of 4 and 3 is 7[Inferior 1 (process 9384) exited normally]
 (gdb) q
