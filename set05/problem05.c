@@ -25,15 +25,15 @@ float borga_X(int x)
 {
     float result = 1.0;
     float term = 1.0;
-    float factorial = 1.0;
+    float factorial = 6.0;
     float x_power = x;
     int n = 1;
     while (term >= 0.000001)
     {
-        factorial = factorial * (2 * n) * (2 * n + 2);
+        factorial *= (2 * n) * (2 * n + 1);
         term = x_power / factorial;
-        result = result + term;
-        x_power = x * x_power;
+        result += term;
+        x_power *= x * (x + 2);
         n++;
     }
     return result;
