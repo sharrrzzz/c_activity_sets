@@ -22,17 +22,20 @@ void input_string(char *a)
 
 void str_reverse(char *str, char *rev_str)
 {
-    int length = strlen(str)-1;
-    for (int i = 0; i < strlen(str)/2; i++)
+    int length = 0;
+    while (str[length] != '\0')
     {
-        char temp;
-        temp = str[i];
-        str[i] = str[length];
-        str[length--]=temp;
+        length++;
     }
+    int i, j = 0;
+    for (i = length - 1; i >= 0; i--)
+    {
+        rev_str[j++] = str[i];
+    }
+    rev_str = '\0';
 }
 
 void output(char *a, char *reverse_a)
 {
-    printf("Reverse string is %s",a);
+    printf("Reverse string is %s", reverse_a);
 }
