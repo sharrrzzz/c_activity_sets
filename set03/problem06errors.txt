@@ -1,0 +1,179 @@
+PS C:\FPC\c_activity_sets\set03> gcc problem06.c -O0 -g
+PS C:\FPC\c_activity_sets\set03> gdb a.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.        
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".      
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>... 
+Reading symbols from C:\FPC\c_activity_sets\set03\a.exe...done.
+(gdb) l
+2       #include <string.h>
+3
+4       void input_string(char* a, char* b);
+5       int sub_str_index(char* string, char* substring);
+6       void output(char *string, char *substring, int index);
+7
+8       int main()
+9       {
+10          char string[100], substring[100];
+11          input_string(string, substring);
+(gdb) b main
+Breakpoint 1 at 0x401471: file problem06.c, line 11.
+(gdb) r
+Starting program: C:\FPC\c_activity_sets\set03/a.exe 
+[New Thread 9416.0x3e74]
+[New Thread 9416.0x5f0]
+
+Breakpoint 1, main () at problem06.c:11
+11          input_string(string, substring);
+(gdb) n
+Enter a string: hellosharzhello
+Enter a string: sharz
+12          int index = sub_str_index(string, substring);
+(gdb) step
+sub_str_index (string=0x61feb8 "hellosharzhello", substring=0x61fe54 "sharz") at problem06.c:27
+27          int stringlength = strlen(string);
+(gdb) n
+28          int substringlength = strlen(substring);
+(gdb) n
+29          for (int i = 0; i <= stringlength - substringlength; i++)
+(gdb) n
+32              for (int j = 0; j <= stringlength - substringlength; j++)
+(gdb) n
+34                  if (string[i + j] != substring[j])
+(gdb) n
+36                      break;
+(gdb) n
+29          for (int i = 0; i <= stringlength - substringlength; i++)
+(gdb) n
+32              for (int j = 0; j <= stringlength - substringlength; j++)
+(gdb) n
+34                  if (string[i + j] != substring[j])
+(gdb) n
+36                      break;
+(gdb) n
+29          for (int i = 0; i <= stringlength - substringlength; i++)
+(gdb) n
+32              for (int j = 0; j <= stringlength - substringlength; j++)
+(gdb) n
+34                  if (string[i + j] != substring[j])
+(gdb) n
+36                      break;
+(gdb) n
+29          for (int i = 0; i <= stringlength - substringlength; i++)
+(gdb) n
+32              for (int j = 0; j <= stringlength - substringlength; j++)
+(gdb) n
+34                  if (string[i + j] != substring[j])
+(gdb) n
+36                      break;
+(gdb) n
+29          for (int i = 0; i <= stringlength - substringlength; i++)
+(gdb) n
+32              for (int j = 0; j <= stringlength - substringlength; j++)
+(gdb) n
+34                  if (string[i + j] != substring[j])
+(gdb) n
+36                      break;
+(gdb) n
+29          for (int i = 0; i <= stringlength - substringlength; i++)
+(gdb) n
+32              for (int j = 0; j <= stringlength - substringlength; j++)
+(gdb) n
+34                  if (string[i + j] != substring[j])
+(gdb) n
+38                  if (j == substringlength)
+(gdb) n
+32              for (int j = 0; j <= stringlength - substringlength; j++)
+(gdb) n
+34                  if (string[i + j] != substring[j])
+(gdb) n
+38                  if (j == substringlength)
+(gdb) n
+32              for (int j = 0; j <= stringlength - substringlength; j++)
+(gdb) n
+34                  if (string[i + j] != substring[j])
+(gdb) n 
+38                  if (j == substringlength)
+(gdb) n
+32              for (int j = 0; j <= stringlength - substringlength; j++)
+(gdb) n
+34                  if (string[i + j] != substring[j])
+(gdb) n
+38                  if (j == substringlength)
+(gdb) n
+32              for (int j = 0; j <= stringlength - substringlength; j++)
+(gdb) n
+34                  if (string[i + j] != substring[j])
+(gdb) n
+38                  if (j == substringlength)
+(gdb) n
+32              for (int j = 0; j <= stringlength - substringlength; j++)
+(gdb) n
+34                  if (string[i + j] != substring[j])
+(gdb) n
+36                      break;
+(gdb) n
+29          for (int i = 0; i <= stringlength - substringlength; i++)
+(gdb) n
+32              for (int j = 0; j <= stringlength - substringlength; j++)
+(gdb) n
+34                  if (string[i + j] != substring[j])
+(gdb) n
+36                      break;
+(gdb) n
+29          for (int i = 0; i <= stringlength - substringlength; i++)
+(gdb) n
+32              for (int j = 0; j <= stringlength - substringlength; j++)
+(gdb) n
+34                  if (string[i + j] != substring[j])
+(gdb) n
+36                      break;
+(gdb) n
+29          for (int i = 0; i <= stringlength - substringlength; i++)
+(gdb) n
+32              for (int j = 0; j <= stringlength - substringlength; j++)
+(gdb) n
+34                  if (string[i + j] != substring[j])
+(gdb) n
+36                      break;
+(gdb) n
+29          for (int i = 0; i <= stringlength - substringlength; i++)
+(gdb) n
+32              for (int j = 0; j <= stringlength - substringlength; j++)
+(gdb) n
+34                  if (string[i + j] != substring[j])
+(gdb) n
+36                      break;
+(gdb) n
+29          for (int i = 0; i <= stringlength - substringlength; i++)
+(gdb) n
+32              for (int j = 0; j <= stringlength - substringlength; j++)
+(gdb) n
+34                  if (string[i + j] != substring[j])
+(gdb) n
+36                      break;
+(gdb) n
+29          for (int i = 0; i <= stringlength - substringlength; i++)
+(gdb) n
+44          return -1;
+(gdb) n
+45      }
+(gdb) n
+main () at problem06.c:13
+13          output(string, substring, index);
+(gdb) n
+sharz is found in hellosharzhello14         return 0;   
+(gdb) n
+15      }
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 9416] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
