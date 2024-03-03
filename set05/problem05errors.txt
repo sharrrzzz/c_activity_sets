@@ -1,0 +1,222 @@
+PS C:\FPC\c_activity_sets\set05> gcc problem05.c
+PS C:\FPC\c_activity_sets\set05> ./a.exe
+Enter a number: 5
+Borga(5) = 1.722647
+PS C:\FPC\c_activity_sets\set05> gcc problem05.c -O0 -g
+PS C:\FPC\c_activity_sets\set05> gdb a.exe
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\FPC\c_activity_sets\set05\a.exe...done.
+(gdb) l
+2
+3       int input(int x);
+4       float borga_X(int x);
+5       void output(int x, float result);
+6
+7       int main()
+8       {
+9           int x;
+10          float result;
+11          x = input(x);
+(gdb) n     
+The program is not being run.
+(gdb) r
+Starting program: C:\FPC\c_activity_sets\set05/a.exe 
+[New Thread 1296.0x233c]
+[New Thread 1296.0x2ebc]
+Enter a number: 5
+Borga(5) = 1.722647[Inferior 1 (process 1296) exited normally]
+(gdb) b main
+Breakpoint 1 at 0x40146e: file problem05.c, line 11.
+(gdb) n
+The program is not being run.
+(gdb) r
+Starting program: C:\FPC\c_activity_sets\set05/a.exe 
+[New Thread 7860.0x18f0]
+[New Thread 7860.0x718]
+
+Breakpoint 1, main () at problem05.c:11
+11          x = input(x);
+(gdb) step
+input (x=4194432) at problem05.c:19
+19          printf("Enter a number: ");
+(gdb) n
+Enter a number: 20          scanf("%d",&x);
+(gdb) n
+5
+21          return x;
+(gdb) n
+22      }
+(gdb) n
+main () at problem05.c:12
+12          result = borga_X(x);
+(gdb) step
+borga_X (x=5) at problem05.c:26
+26          float result = 1.0;
+(gdb) n
+27          float term = 1.0;
+(gdb) n
+28          float factorial = 6.0;
+(gdb) n
+29          float x_power = x;
+(gdb) n
+30          int n = 1;
+(gdb) n
+31          while (term >= 0.000001)
+(gdb) n
+33              factorial *= (2 * n) * (2 * n + 1);
+(gdb) n
+34              term = x_power / factorial;
+(gdb) n
+35              result += term;
+(gdb) n
+36              x_power *= x * (x + 2);
+(gdb) n
+37              n++;
+(gdb) n
+31          while (term >= 0.000001)
+(gdb) n
+33              factorial *= (2 * n) * (2 * n + 1);
+(gdb) n
+34              term = x_power / factorial;
+(gdb) n
+35              result += term;
+(gdb) n
+36              x_power *= x * (x + 2);
+(gdb) n
+37              n++;
+(gdb) n
+31          while (term >= 0.000001)
+(gdb) n
+33              factorial *= (2 * n) * (2 * n + 1);
+(gdb) n
+34              term = x_power / factorial;
+(gdb) n
+35              result += term;
+(gdb) n
+36              x_power *= x * (x + 2);
+(gdb) n
+37              n++;
+(gdb) n
+31          while (term >= 0.000001)
+(gdb) n
+33              factorial *= (2 * n) * (2 * n + 1);
+(gdb) n
+34              term = x_power / factorial;
+(gdb) n
+35              result += term;
+(gdb) n
+36              x_power *= x * (x + 2);
+(gdb) n
+37              n++;
+(gdb) n
+31          while (term >= 0.000001)
+(gdb) nn
+Undefined command: "nn".  Try "help".
+(gdb) n
+33              factorial *= (2 * n) * (2 * n + 1);
+(gdb) n
+34              term = x_power / factorial;
+(gdb) n
+35              result += term;
+(gdb) n
+36              x_power *= x * (x + 2);
+(gdb) n
+37              n++;
+(gdb) n
+31          while (term >= 0.000001)
+(gdb) n
+33              factorial *= (2 * n) * (2 * n + 1);
+(gdb) n
+34              term = x_power / factorial;
+(gdb) n
+35              result += term;
+(gdb) n
+36              x_power *= x * (x + 2);
+(gdb) n
+37              n++;
+(gdb) n
+31          while (term >= 0.000001)
+(gdb) n
+33              factorial *= (2 * n) * (2 * n + 1);
+(gdb) n
+34              term = x_power / factorial;
+(gdb) n
+35              result += term;
+(gdb) n
+36              x_power *= x * (x + 2);
+(gdb) n
+37              n++;
+(gdb) n
+31          while (term >= 0.000001)
+(gdb) n
+33              factorial *= (2 * n) * (2 * n + 1);
+(gdb) n
+34              term = x_power / factorial;
+(gdb) n
+35              result += term;
+(gdb) n
+36              x_power *= x * (x + 2);
+(gdb) n
+37              n++;
+(gdb) n
+31          while (term >= 0.000001)
+(gdb) n
+33              factorial *= (2 * n) * (2 * n + 1);
+(gdb) n
+34              term = x_power / factorial;
+(gdb) n
+35              result += term;
+(gdb) n
+36              x_power *= x * (x + 2);
+(gdb) n
+37              n++;
+(gdb) n
+31          while (term >= 0.000001)
+(gdb) n
+33              factorial *= (2 * n) * (2 * n + 1);
+(gdb) n
+34              term = x_power / factorial;
+(gdb) n
+35              result += term;
+(gdb) n
+36              x_power *= x * (x + 2);
+(gdb) n
+37              n++;
+(gdb) n
+31          while (term >= 0.000001)
+(gdb) n
+33              factorial *= (2 * n) * (2 * n + 1);
+(gdb) n
+34              term = x_power / factorial;
+(gdb) n
+35              result += term;
+(gdb) n
+36              x_power *= x * (x + 2);
+(gdb) n
+37              n++;
+(gdb) n
+31          while (term >= 0.000001)
+(gdb) n
+39          return result;
+(gdb) n
+40      }
+(gdb) n
+main () at problem05.c:13
+13          output(x, result);
+(gdb) n
+Borga(5) = 1.72264714       return 0;
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 7860] will be killed.
+
+Quit anyway? (y or n) y
+error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5

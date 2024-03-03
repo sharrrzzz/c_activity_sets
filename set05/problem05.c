@@ -24,17 +24,19 @@ int input(int x)
 float borga_X(int x)
 {
     float result = 1.0;
-    float term = 1.0;
-    float factorial = 6.0;
+    float term;
+    float factorial = 1.0;
     float x_power = x;
-    int n = 1;
-    while (term >= 0.000001)
+    for (int i = 1; ;i++)
     {
-        factorial *= (2 * n) * (2 * n + 1);
-        term = x_power / factorial;
+        factorial *= (2 * i) * (2 * i + 1);
+        term = x_power/factorial;
         result += term;
-        x_power *= x * (x + 2);
-        n++;
+        if (term < 0.000001 && term > -0.000001)
+        {
+            break;
+        }
+        x_power *= x;
     }
     return result;
 }
